@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "arcticstructures:campsite",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 94837215,
+    "spacing": 16,
+    "separation": 8,
+    "spread_type": "triangular"
+  }
+}

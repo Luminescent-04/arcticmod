@@ -1,0 +1,12 @@
+{
+  "structures": [
+    { "weight": 1, "structure": "arcticstructures:radio_tower" }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 13011221,
+    "spacing": 216,
+    "separation": 34,
+    "spread_type": "triangular"
+  }
+}

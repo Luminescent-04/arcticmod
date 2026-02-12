@@ -1,0 +1,12 @@
+{
+  "structures": [
+    { "weight": 1, "structure": "arcticstructures:crashed_jeep" }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 12011220,
+    "spacing": 64,
+    "separation": 8,
+    "spread_type": "triangular"
+  }
+}
