@@ -1,6 +1,6 @@
 {
   "structures": [
-    { "weight": 1, "structure": "arcticstructures:radio_tower" }
+    { "weight": 1, "structure": "arcticpoi:radio_tower" }
   ],
   "placement": {
     "type": "minecraft:random_spread",

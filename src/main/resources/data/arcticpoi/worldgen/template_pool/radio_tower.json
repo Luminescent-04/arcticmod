@@ -1,12 +1,12 @@
 {
-  "name": "arcticstructures:crashed_jeep",
+  "name": "arcticpoi:radio_tower",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "arcticstructures:crashed_jeep",
+        "location": "arcticpoi:radio_tower",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }

@@ -8,9 +8,9 @@
   "start_height": {
     "absolute": 0
   },
-  "start_pool": "arcticstructures:radio_tower",
+  "start_pool": "arcticpoi:campsite",
   "step": "surface_structures",
-  "terrain_adaptation": "none",
+  "terrain_adaptation": "beard_thin",
   "type": "minecraft:jigsaw",
   "use_expansion_hack": true
 }

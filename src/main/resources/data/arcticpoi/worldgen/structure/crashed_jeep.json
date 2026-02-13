@@ -8,9 +8,9 @@
   "start_height": {
     "absolute": 0
   },
-  "start_pool": "arcticstructures:campsite",
+  "start_pool": "arcticpoi:crashed_jeep",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "type": "minecraft:jigsaw",
-  "use_expansion_hack": true
+  "use_expansion_hack": false
 }

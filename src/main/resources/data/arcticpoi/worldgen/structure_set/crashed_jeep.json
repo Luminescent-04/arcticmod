@@ -1,14 +1,11 @@
 {
   "structures": [
-    {
-      "structure": "arcticstructures:campsite",
-      "weight": 1
-    }
+    { "weight": 1, "structure": "arcticpoi:crashed_jeep" }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 94837215,
-    "spacing": 16,
+    "salt": 12011220,
+    "spacing": 64,
     "separation": 8,
     "spread_type": "triangular"
   }
