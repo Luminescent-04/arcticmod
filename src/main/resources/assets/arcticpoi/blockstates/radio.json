@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "arcticpoi:block/radio" }
+    "facing=north": { "model": "arcticpoi:block/radio" },
+    "facing=south": { "model": "arcticpoi:block/radio", "y": 180 },
+    "facing=west":  { "model": "arcticpoi:block/radio", "y": 270 },
+    "facing=east":  { "model": "arcticpoi:block/radio", "y": 90 }
   }
 }

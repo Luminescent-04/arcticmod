@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "arcticpoi:crate",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "name": "minecraft:oak_planks",
+              "functions": [
+                {
+                  "function": "set_count",
+                  "count": { "type": "uniform", "min": 1, "max": 4 }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

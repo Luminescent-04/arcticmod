@@ -17,4 +17,8 @@ public class ModItems {
             ITEMS.register("radio",
                     () -> new BlockItem(ModBlocks.RADIO.get(),
                             new Item.Properties()));
+
+    public static final RegistryObject<Item> CRATE = ITEMS.register("crate",
+            () -> new BlockItem(ModBlocks.CRATE.get(),
+                    new Item.Properties()));
 }
