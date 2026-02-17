@@ -1,4 +1,8 @@
 {
   "block.arcticpoi.radio": "Radio",
-  "block.arcticpoi.crate": "Wooden Crate"
+  "block.arcticpoi.crate": "Wooden Crate",
+  "block.arcticpoi.brokenchair": "Broken Chair",
+  "block.arcticpoi.chair": "Wooden Chair",
+  "block.arcticpoi.woodstack": "Stack of Firewood",
+  "itemGroup.arctic_decor": "Arctic Decor"
 }

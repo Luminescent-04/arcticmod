@@ -1,7 +1,8 @@
 package net.diego.arcticpoi.block;
 
 import net.diego.arcticpoi.ArcticPoi;
-import net.diego.arcticpoi.block.custom.RadioBlock;
+import net.diego.arcticpoi.block.custom.RotationalBlock;
+import net.diego.arcticpoi.block.custom.RotationalNoCollideBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,7 +20,7 @@ public class ModBlocks {
 
     // RADIO BLOCK REGISTRATION
     public static final RegistryObject<Block> RADIO = BLOCKS.register("radio",
-            () -> new RadioBlock(BlockBehaviour.Properties
+            () -> new RotationalBlock(BlockBehaviour.Properties
                     .of()                      // Basic block settings
                     .mapColor(MapColor.METAL)  // Map color (used on maps)
                     .strength(2.0f)            // Hardness (how long to break)
@@ -33,6 +34,29 @@ public class ModBlocks {
                     .of()                      // Basic block settings
                     .strength(1.5F)            // Slightly weaker than stone
                     .sound(SoundType.WOOD)     // Wood break/place sounds
-            )
-    );
+            ));
+
+    public static final RegistryObject<Block> CHAIR = BLOCKS.register("chair",
+            () -> new RotationalBlock(BlockBehaviour.Properties
+                    .of()
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
+
+    public static final RegistryObject<Block> WOODSTACK = BLOCKS.register("woodstack",
+            () -> new RotationalBlock(BlockBehaviour.Properties
+                    .of()
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
+
+    public static final RegistryObject<Block> BROKENCHAIR = BLOCKS.register("brokenchair",
+            () -> new RotationalNoCollideBlock(BlockBehaviour.Properties
+                    .of()
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+            ));
 }
