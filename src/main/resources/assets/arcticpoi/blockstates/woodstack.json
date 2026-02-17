@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "arcticpoi:block/woodstack" },
+    "facing=south": { "model": "arcticpoi:block/woodstack", "y": 180 },
+    "facing=west":  { "model": "arcticpoi:block/woodstack", "y": 270 },
+    "facing=east":  { "model": "arcticpoi:block/woodstack", "y": 90 }
+  }
+}
