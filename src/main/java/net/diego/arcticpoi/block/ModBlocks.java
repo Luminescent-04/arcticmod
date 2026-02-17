@@ -38,7 +38,7 @@ public class ModBlocks {
                     () -> new RotationalNoCollideBlock(BlockBehaviour.Properties
                             .of()
                             .mapColor(MapColor.METAL)
-                            .strength(2.0f)
+                            .strength(2.5f)
                             .noOcclusion()
                             .noCollission()
                     ));
@@ -88,12 +88,21 @@ public class ModBlocks {
                             .noOcclusion()
                     ));
 
-    public static final RegistryObject<Block> TABLE =
-            registerBlock("table",
-                    () -> new Block(BlockBehaviour.Properties
+    public static final RegistryObject<Block> FOLDINGTABLE =
+            registerBlock("foldingtable",
+                    () -> new RotationalBlock(BlockBehaviour.Properties
+                            .of()
+                            .strength(2.0F)
+                            .sound(SoundType.STONE)
+                            .noOcclusion()
+                    ));
+
+    public static final RegistryObject<Block> WATERJUG =
+            registerBlock("waterjug",
+                    () -> new RotationalBlock(BlockBehaviour.Properties
                             .of()
                             .strength(1.5F)
-                            .sound(SoundType.WOOD)
+                            .sound(SoundType.STONE)
                             .noOcclusion()
                     ));
 }
