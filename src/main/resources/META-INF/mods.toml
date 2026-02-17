@@ -7,7 +7,7 @@ license="All Rights Reserved"
     version="1.0.0"
     displayName="Arctic Poi"
     authors="Lumine04, BugJuice"
-    description='''First test of arctic structures for my modpack'''
+    description='''Adds decorations and structures'''
 
 [[dependencies.arcticpoi]]
     modId="forge"

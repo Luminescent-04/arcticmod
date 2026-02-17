@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "arcticpoi:block/shelf" },
+    "facing=south": { "model": "arcticpoi:block/shelf", "y": 180 },
+    "facing=west":  { "model": "arcticpoi:block/shelf", "y": 270 },
+    "facing=east":  { "model": "arcticpoi:block/shelf", "y": 90 }
+  }
+}
