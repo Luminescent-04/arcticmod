@@ -37,4 +37,5 @@ public class ModItems {
             ITEMS.register("brokenchair",
                     () -> new BlockItem(ModBlocks.BROKENCHAIR.get(),
                             new Item.Properties()));
+
 }

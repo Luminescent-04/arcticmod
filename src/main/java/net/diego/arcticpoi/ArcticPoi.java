@@ -5,7 +5,6 @@ import net.diego.arcticpoi.item.CreativeTab;
 import net.diego.arcticpoi.block.ModBlocks;
 import net.diego.arcticpoi.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;

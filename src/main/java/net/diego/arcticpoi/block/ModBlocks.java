@@ -20,12 +20,12 @@ public class ModBlocks {
 
     // RADIO BLOCK REGISTRATION
     public static final RegistryObject<Block> RADIO = BLOCKS.register("radio",
-            () -> new RotationalBlock(BlockBehaviour.Properties
+            () -> new RotationalNoCollideBlock(BlockBehaviour.Properties
                     .of()                      // Basic block settings
                     .mapColor(MapColor.METAL)  // Map color (used on maps)
                     .strength(2.0f)            // Hardness (how long to break)
-                    .noOcclusion()             // Doesn't block light / full cube rendering
-                    .randomTicks()             // Enables randomTick() if used
+                    .noOcclusion() // Doesn't block light / full cube rendering
+                    .noCollission()
             ));
 
     // CRATE BLOCK REGISTRATION
