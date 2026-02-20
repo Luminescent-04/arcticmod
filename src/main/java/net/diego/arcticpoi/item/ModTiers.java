@@ -1,6 +1,5 @@
 package net.diego.arcticpoi.item;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.core.registries.Registries;
@@ -16,8 +15,8 @@ public class ModTiers {
             120, // durability
             4.0F, // mining speed (irrelevant for weapons)
             1.0F, // base attack damage
-            5,   // enchantability
+            0,   // enchantability
             TagKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "needs_stone_tool")),
-            () -> Ingredient.of(Items.IRON_INGOT) // repair ingredient
+            () -> Ingredient.EMPTY // repair ingredient
     );
 }

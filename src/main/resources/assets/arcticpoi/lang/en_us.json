@@ -2,12 +2,13 @@
   "block.arcticpoi.brokenchair": "Broken Chair",
   "block.arcticpoi.chair": "Wooden Chair",
   "block.arcticpoi.crate": "Wooden Crate",
+  "block.arcticpoi.foldingtable": "Folding Table",
+  "block.arcticpoi.logseat": "Log Seat",
   "block.arcticpoi.radio": "Radio",
   "block.arcticpoi.shelf": "Wooden Shelf",
-  "block.arcticpoi.woodstack": "Stack of Firewood",
   "block.arcticpoi.waterjug": "Water Jug",
-  "block.arcticpoi.foldingtable": "Folding Table",
-  "itemGroup.arctic_decor": "Arctic Decor",
-  "block.arcticpoi.logseat": "Log Seat",
-  "item.arcticpoi.plank": "2x4"
+  "block.arcticpoi.woodstack": "Stack of Firewood",
+  "item.arcticpoi.plank": "2x4",
+  "item.arcticpoi.pocketknife": "Pocket Knife",
+  "itemGroup.arctic_decor": "Arctic Decor"
 }
