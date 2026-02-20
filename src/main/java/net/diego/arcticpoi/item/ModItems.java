@@ -14,4 +14,7 @@ public class ModItems {
     // Register the Pocket Knife
     public static final RegistryObject<Item> POCKETKNIFE =
             ITEMS.register("pocketknife", PocketKnifeItem::new);
+
+    public static final RegistryObject<Item> PLANK =
+            ITEMS.register("plank", PlankItem::new);
 }
