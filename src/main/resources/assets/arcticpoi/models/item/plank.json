@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "arcticpoi:item/plank",
-		"texture": "arcticpoi:item/plank"
+		"particle": "arcticpoi:item/plank"
 	},
 	"elements": [
 		{
