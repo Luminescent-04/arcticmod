@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:barrel",
+  "type": "minecraft:block",
   "pools": [
     {
       "rolls": 1,
@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:gunpowder",
+          "name": "arcticpoi:duct_tape",
           "weight": 5,
           "functions": [
             {

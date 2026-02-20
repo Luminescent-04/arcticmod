@@ -2,14 +2,19 @@ package net.diego.arcticpoi.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
-
+import java.util.List;
 import java.util.UUID;
 
 public class MalletItem extends DiggerItem {
@@ -51,5 +56,30 @@ public class MalletItem extends DiggerItem {
         return slot == EquipmentSlot.MAINHAND
                 ? defaultModifiers
                 : super.getDefaultAttributeModifiers(slot); //this bridge syncs this class for multiplayer
+    }
+
+    // Apply custom knockback on hit, the ghetto way
+    @Override
+    public boolean hurtEnemy(ItemStack stack, net.minecraft.world.entity.LivingEntity target, net.minecraft.world.entity.LivingEntity attacker) {
+        if (!attacker.level().isClientSide()) {
+            // Custom knockback strength
+            float knockbackStrength = 0.0F;
+
+            // Push the target away from attacker
+            double dx = attacker.getX() - target.getX();
+            double dz = attacker.getZ() - target.getZ();
+            target.knockback(knockbackStrength, dx, dz);
+        }
+
+        return super.hurtEnemy(stack, target, attacker);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, world, tooltip, flag);
+
+        // Add gray italic tooltip
+        tooltip.add(Component.literal("Comfortable, but doesn't look like it hurts")
+                .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

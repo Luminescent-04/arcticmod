@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " R",
+    " I",
+    " S"
+  ],
+  "key": {
+    "R": { "item": "minecraft:iron_nugget"},
+    "I": { "item": "minecraft:iron_ingot"},
+    "S": { "item": "minecraft:stick"}
+  },
+  "result": {
+    "item": "arcticpoi:scrapknife"
+  }
+}

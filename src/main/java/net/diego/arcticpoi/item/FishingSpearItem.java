@@ -6,6 +6,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.DiggerItem;
@@ -17,20 +18,20 @@ import net.minecraftforge.common.ForgeMod;
 import java.util.List;
 import java.util.UUID;
 
-public class PocketKnifeItem extends DiggerItem {
+public class FishingSpearItem extends DiggerItem {
 
-    private static final UUID POCKETKNIFE_REACH_UUID =
-            UUID.fromString("123e4567-e89b-12d3-a456-426614174000"); //UUID MUST BE DIFFERENT FOR EVERY WEAPON
+    private static final UUID FISHINGSPEAR_REACH_UUID =
+            UUID.fromString("da9b3efe-59dc-4a97-a071-45242166d5f2");
 
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public PocketKnifeItem() {
+    public FishingSpearItem() {
         super(
                 2.5f,                   // Attack damage
-                5.5f,                  // Attack speed (negative = faster)
+                -2.25f,                  // Attack speed (negative = faster)
                 ModTiers.IMPROVISED,    // Custom tier
                 BlockTags.MINEABLE_WITH_HOE, // What blocks it can break
-                new Item.Properties().durability(160) // Standard item properties
+                new Item.Properties().durability(160)
         );
 
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder =
@@ -41,9 +42,9 @@ public class PocketKnifeItem extends DiggerItem {
         builder.put(
                 ForgeMod.ENTITY_REACH.get(),
                 new AttributeModifier(
-                        POCKETKNIFE_REACH_UUID,
-                        "Knife reach",
-                        -1.0D, // shorter than normal reach
+                        FISHINGSPEAR_REACH_UUID,
+                        "Fishing Spear reach",
+                        1.75D, // longer than normal reach
                         AttributeModifier.Operation.ADDITION
                 )
         );
@@ -60,18 +61,17 @@ public class PocketKnifeItem extends DiggerItem {
 
     // Apply custom knockback on hit, the ghetto way
     @Override
-    public boolean hurtEnemy(ItemStack stack, net.minecraft.world.entity.LivingEntity target, net.minecraft.world.entity.LivingEntity attacker) {
-        if (!attacker.level().isClientSide()) {
-            // Custom knockback strength
-            float knockbackStrength = 0.0F;
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        boolean result = super.hurtEnemy(stack, target, attacker);
 
-            // Push the target away from attacker
-            double dx = attacker.getX() - target.getX();
-            double dz = attacker.getZ() - target.getZ();
-            target.knockback(knockbackStrength, dx, dz);
-        }
+        // Remove knockback velocity
+        target.setDeltaMovement(
+                target.getDeltaMovement().x * 0.1,
+                target.getDeltaMovement().y *0.1,
+                target.getDeltaMovement().z * 0.1
+        );
 
-        return super.hurtEnemy(stack, target, attacker);
+        return result;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class PocketKnifeItem extends DiggerItem {
         super.appendHoverText(stack, world, tooltip, flag);
 
         // Add gray italic tooltip
-        tooltip.add(Component.literal("Could riddle something with cuts in seconds.")
+        tooltip.add(Component.literal("Sturdy long fishing pole, good for poking at a distance")
                 .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

@@ -17,9 +17,9 @@ public class CreativeTab {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ArcticPoi.MOD_ID);
 
     // The actual creative tab
-    public static final RegistryObject<CreativeModeTab> ARCTICPOI_TAB = TABS.register("arctic_decor",
+    public static final RegistryObject<CreativeModeTab> ARCTICPOI_TAB = TABS.register("arctic_essentials",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.arctic_decor")) // translation key in en_us.json
+                    .title(Component.translatable("itemGroup.arctic_essentials")) // translation key in en_us.json
                     .icon(() -> new ItemStack(ModBlocks.CRATE.get()))        // tab icon
                     .displayItems((params, output) -> {
                         // Add all blocks automatically

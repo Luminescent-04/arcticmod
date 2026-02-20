@@ -2,43 +2,49 @@ package net.diego.arcticpoi.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
-
+import java.util.List;
 import java.util.UUID;
 
 public class PlankItem extends DiggerItem {
 
+    // Unique UUIDs for reach modifier
     private static final UUID PLANK_REACH_UUID =
-            UUID.fromString("907dc4d0-ddbf-4096-8ef4-8c4ec49b3e24");
+            UUID.fromString("9a2d8c71-3e44-41d9-8b1e-55c2f9d1ef01");
 
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
     public PlankItem() {
         super(
-                0.5f,                   // Attack damage
-                -2.0f,                  // Attack speed (negative = faster)
+                1.0f,                   // Attack damage
+                -3.5f,                  // Attack speed (negative = slower)
                 ModTiers.IMPROVISED,    // Custom tier
                 BlockTags.MINEABLE_WITH_HOE, // What blocks it can break
-                new Item.Properties().durability(165) // Standard item properties
+                new Item.Properties()
         );
 
-        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder =
-                ImmutableMultimap.builder();
-
+        // Build attributes for this weapon
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.putAll(super.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND));
 
+        // Add custom reach (shorter than vanilla)
         builder.put(
                 ForgeMod.ENTITY_REACH.get(),
                 new AttributeModifier(
                         PLANK_REACH_UUID,
                         "Plank reach",
-                        -0.5D, // shorter than normal reach
+                        0.0D, // slightly shorter reach
                         AttributeModifier.Operation.ADDITION
                 )
         );
@@ -48,8 +54,31 @@ public class PlankItem extends DiggerItem {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-        return slot == EquipmentSlot.MAINHAND
-                ? defaultModifiers
-                : super.getDefaultAttributeModifiers(slot); //this bridge syncs this class for multiplayer
+        return slot == EquipmentSlot.MAINHAND ? defaultModifiers : super.getDefaultAttributeModifiers(slot);
+    }
+
+    // Apply custom knockback on hit, the ghetto way
+    @Override
+    public boolean hurtEnemy(ItemStack stack, net.minecraft.world.entity.LivingEntity target, net.minecraft.world.entity.LivingEntity attacker) {
+        if (!attacker.level().isClientSide()) {
+            // Custom knockback strength
+            float knockbackStrength = 0.8F;
+
+            // Push the target away from attacker
+            double dx = attacker.getX() - target.getX();
+            double dz = attacker.getZ() - target.getZ();
+            target.knockback(knockbackStrength, dx, dz);
+        }
+
+        return super.hurtEnemy(stack, target, attacker);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, world, tooltip, flag);
+
+        // Add gray italic tooltip
+        tooltip.add(Component.literal("Awkward to hold, but heavy enough to send something flying ")
+                .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

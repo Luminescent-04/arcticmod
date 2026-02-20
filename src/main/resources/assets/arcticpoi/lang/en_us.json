@@ -10,6 +10,11 @@
   "block.arcticpoi.woodstack": "Stack of Firewood",
   "item.arcticpoi.plank": "2x4",
   "item.arcticpoi.pocketknife": "Pocket Knife",
-  "itemGroup.arctic_decor": "Arctic Decor",
-  "item.arcticpoi.mallet": "Wooden Mallet"
+  "itemGroup.arctic_essentials": "Arctic Essentials",
+  "item.arcticpoi.mallet": "Wooden Mallet",
+  "item.arcticpoi.fishingspear": "Fishing Spear",
+  "item.arcticpoi.duct_tape": "Roll of Duct Tape",
+  "item.arcticpoi.shaft": "Wood Shaft",
+  "item.arcticpoi.scrapknife": "Scrap Knife",
+  "item.arcticpoi.makeshiftspear": "Scrap Spear"
 }

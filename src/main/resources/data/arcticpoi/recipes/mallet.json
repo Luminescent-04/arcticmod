@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " R",
-    " I",
-    " S"
+    "R R",
+    " I ",
+    " S "
   ],
   "key": {
-    "R": {"item": "minecraft:oak_planks" },
-    "I": { "item": "minecraft:stick" },
-    "S": { "item": "minecraft:oak_planks" }
+    "R": { "tag": "minecraft:planks" },
+    "I": { "item": "arcticpoi:duct_tape" },
+    "S": { "item": "minecraft:stick" }
   },
   "result": {
     "item": "arcticpoi:mallet"

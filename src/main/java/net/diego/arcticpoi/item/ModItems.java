@@ -11,7 +11,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, ArcticPoi.MOD_ID);
 
-    // Register the Pocket Knife
+    //custom weapons
     public static final RegistryObject<Item> POCKETKNIFE =
             ITEMS.register("pocketknife", PocketKnifeItem::new);
 
@@ -20,4 +20,23 @@ public class ModItems {
 
     public static final RegistryObject<Item> MALLET =
             ITEMS.register("mallet", MalletItem::new);
+
+    public static final RegistryObject<Item> FISHINGSPEAR =
+            ITEMS.register("fishingspear", FishingSpearItem::new);
+
+    public static final RegistryObject<Item> MAKESHIFTSPEAR =
+            ITEMS.register("makeshiftspear", MakeShiftSpearItem::new);
+
+    public static final RegistryObject<Item> SCRAPKNIFE =
+            ITEMS.register("scrapknife", ScrapKnifeItem::new);
+
+
+    //custom item ingredients
+    public static final RegistryObject<Item> DUCT_TAPE =
+            ITEMS.register("duct_tape",
+                    () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SHAFT =
+            ITEMS.register("shaft",
+                    () -> new Item(new Item.Properties()));
 }
