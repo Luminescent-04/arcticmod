@@ -3,7 +3,6 @@ package net.diego.arcticpoi.block;
 import net.diego.arcticpoi.ArcticPoi;
 import net.diego.arcticpoi.block.custom.RotationalBlock;
 import net.diego.arcticpoi.block.custom.RotationalNoCollideBlock;
-import net.diego.arcticpoi.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +15,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static net.diego.arcticpoi.item.ModItems.ITEMS;
+
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
@@ -26,7 +27,7 @@ public class ModBlocks {
 
         RegistryObject<Block> block = BLOCKS.register(name, blockSupplier);
 
-        ModItems.ITEMS.register(name,
+        ITEMS.register(name,
                 () -> new BlockItem(block.get(), new Item.Properties()));
 
         return block;
@@ -103,6 +104,15 @@ public class ModBlocks {
                             .of()
                             .strength(1.5F)
                             .sound(SoundType.STONE)
+                            .noOcclusion()
+                    ));
+
+    public static final RegistryObject<Block> LOGSEAT =
+            registerBlock("logseat" ,
+                    () -> new RotationalBlock(BlockBehaviour.Properties
+                            .of()
+                            .strength(1.3F)
+                            .sound(SoundType.WOOD)
                             .noOcclusion()
                     ));
 }

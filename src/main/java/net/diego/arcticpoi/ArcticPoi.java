@@ -25,7 +25,7 @@ public class ArcticPoi {
 
         // Register blocks and items
         ModBlocks.BLOCKS.register(modEventBus);
-        ModItems.ITEMS.register(modEventBus);
+        ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         CreativeTab.TABS.register(modEventBus);
 
         // Lifecycle listeners

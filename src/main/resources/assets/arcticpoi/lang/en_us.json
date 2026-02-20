@@ -7,5 +7,7 @@
   "block.arcticpoi.woodstack": "Stack of Firewood",
   "block.arcticpoi.waterjug": "Water Jug",
   "block.arcticpoi.foldingtable": "Folding Table",
-  "itemGroup.arctic_decor": "Arctic Decor"
+  "itemGroup.arctic_decor": "Arctic Decor",
+  "block.arcticpoi.logseat": "Log Seat",
+  "item.arcticpoi.board": "2x4"
 }
