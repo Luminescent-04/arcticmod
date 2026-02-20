@@ -10,5 +10,6 @@
   "block.arcticpoi.woodstack": "Stack of Firewood",
   "item.arcticpoi.plank": "2x4",
   "item.arcticpoi.pocketknife": "Pocket Knife",
-  "itemGroup.arctic_decor": "Arctic Decor"
+  "itemGroup.arctic_decor": "Arctic Decor",
+  "item.arcticpoi.mallet": "Wooden Mallet"
 }

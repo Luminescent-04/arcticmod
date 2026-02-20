@@ -17,4 +17,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> PLANK =
             ITEMS.register("plank", PlankItem::new);
+
+    public static final RegistryObject<Item> MALLET =
+            ITEMS.register("mallet", MalletItem::new);
 }
