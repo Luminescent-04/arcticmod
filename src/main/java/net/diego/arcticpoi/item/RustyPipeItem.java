@@ -6,7 +6,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.DiggerItem;
@@ -18,33 +17,34 @@ import net.minecraftforge.common.ForgeMod;
 import java.util.List;
 import java.util.UUID;
 
-public class FishingSpearItem extends DiggerItem {
+public class RustyPipeItem extends DiggerItem {
 
-    private static final UUID FISHINGSPEAR_REACH_UUID =
-            UUID.fromString("da9b3efe-59dc-4a97-a071-45242166d5f2");
+    // Unique UUIDs for reach modifier
+    private static final UUID RUSTYPIPE_REACH_UUID =
+            UUID.fromString("8212a2d0-cf38-4dbb-b2c1-9c6e65b29af0");
 
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public FishingSpearItem() {
+    public RustyPipeItem() {
         super(
-                2.5f,                   // Attack damage
-                -2.25f,                  // Attack speed (negative = faster)
+                1.5f,                   // Attack damage
+                -3.4f,                  // Attack speed (negative = slower)
                 ModTiers.IMPROVISED,    // Custom tier
                 BlockTags.MINEABLE_WITH_HOE, // What blocks it can break
-                new Item.Properties()
+                new Item.Properties().durability(170)
         );
 
-        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder =
-                ImmutableMultimap.builder();
-
+        // Build attributes for this weapon
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.putAll(super.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND));
 
+        // Add custom reach (shorter than vanilla)
         builder.put(
                 ForgeMod.ENTITY_REACH.get(),
                 new AttributeModifier(
-                        FISHINGSPEAR_REACH_UUID,
-                        "Fishing Spear reach",
-                        1.75D, // longer than normal reach
+                        RUSTYPIPE_REACH_UUID,
+                        "Rustypipe reach",
+                        0.0D, // slightly shorter reach
                         AttributeModifier.Operation.ADDITION
                 )
         );
@@ -54,24 +54,23 @@ public class FishingSpearItem extends DiggerItem {
 
     @Override
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-        return slot == EquipmentSlot.MAINHAND
-                ? defaultModifiers
-                : super.getDefaultAttributeModifiers(slot); //this bridge syncs this class for multiplayer
+        return slot == EquipmentSlot.MAINHAND ? defaultModifiers : super.getDefaultAttributeModifiers(slot);
     }
 
     // Apply custom knockback on hit, the ghetto way
     @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        boolean result = super.hurtEnemy(stack, target, attacker);
+    public boolean hurtEnemy(ItemStack stack, net.minecraft.world.entity.LivingEntity target, net.minecraft.world.entity.LivingEntity attacker) {
+        if (!attacker.level().isClientSide()) {
+            // Custom knockback strength
+            float knockbackStrength = 1.0F;
 
-        // Remove knockback velocity
-        target.setDeltaMovement(
-                target.getDeltaMovement().x * 0.1,
-                target.getDeltaMovement().y *0.1,
-                target.getDeltaMovement().z * 0.1
-        );
+            // Push the target away from attacker
+            double dx = attacker.getX() - target.getX();
+            double dz = attacker.getZ() - target.getZ();
+            target.knockback(knockbackStrength, dx, dz);
+        }
 
-        return result;
+        return super.hurtEnemy(stack, target, attacker);
     }
 
     @Override
@@ -79,7 +78,7 @@ public class FishingSpearItem extends DiggerItem {
         super.appendHoverText(stack, world, tooltip, flag);
 
         // Add gray italic tooltip
-        tooltip.add(Component.literal("Sturdy long fishing pole, good for poking at a distance")
+        tooltip.add(Component.literal("Freezing to the touch and quite heavy")
                 .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

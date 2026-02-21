@@ -27,11 +27,11 @@ public class PlankItem extends DiggerItem {
 
     public PlankItem() {
         super(
-                1.0f,                   // Attack damage
+                0.5f,                   // Attack damage
                 -3.5f,                  // Attack speed (negative = slower)
                 ModTiers.IMPROVISED,    // Custom tier
                 BlockTags.MINEABLE_WITH_HOE, // What blocks it can break
-                new Item.Properties()
+                new Item.Properties().durability(155)
         );
 
         // Build attributes for this weapon
@@ -78,7 +78,7 @@ public class PlankItem extends DiggerItem {
         super.appendHoverText(stack, world, tooltip, flag);
 
         // Add gray italic tooltip
-        tooltip.add(Component.literal("Awkward to hold, but heavy enough to send something flying ")
+        tooltip.add(Component.literal("Awkward to hold, but a lot of weight")
                 .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

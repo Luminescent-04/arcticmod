@@ -2,14 +2,21 @@ package net.diego.arcticpoi.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 
+import java.util.List;
 import java.util.UUID;
 
 public class MakeShiftSpearItem extends DiggerItem {
@@ -51,5 +58,26 @@ public class MakeShiftSpearItem extends DiggerItem {
         return slot == EquipmentSlot.MAINHAND
                 ? defaultModifiers
                 : super.getDefaultAttributeModifiers(slot); //this bridge syncs this class for multiplayer
+    }
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        boolean result = super.hurtEnemy(stack, target, attacker);
+
+        // Remove knockback velocity
+        target.setDeltaMovement(
+                target.getDeltaMovement().x * 0.1,
+                target.getDeltaMovement().y *0.1,
+                target.getDeltaMovement().z * 0.1
+        );
+
+        return result;
+    }
+    @Override
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, world, tooltip, flag);
+
+        // Add gray italic tooltip
+        tooltip.add(Component.literal("Thin blade, thinner stick, held by hopes and dreams")
+                .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

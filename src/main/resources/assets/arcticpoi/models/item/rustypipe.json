@@ -1,0 +1,107 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"2": "arcticpoi:item/rustypipe",
+		"particle": "arcticpoi:item/rustypipe"
+	},
+	"elements": [
+		{
+			"from": [6.75, 12.5, 6.75],
+			"to": [9.25, 13, 9.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 11, 7]},
+			"faces": {
+				"north": {"uv": [5, 6.5, 6.25, 6.75], "texture": "#2"},
+				"east": {"uv": [6.5, 5.5, 7.75, 5.75], "texture": "#2"},
+				"south": {"uv": [6.5, 6, 7.75, 6.25], "texture": "#2"},
+				"west": {"uv": [6.5, 6.5, 7.75, 6.75], "texture": "#2"},
+				"up": {"uv": [6.25, 3.25, 5, 2], "texture": "#2"},
+				"down": {"uv": [6.25, 3.5, 5, 4.75], "texture": "#2"}
+			}
+		},
+		{
+			"from": [6.75, 14.5, 6.75],
+			"to": [9.25, 15, 9.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 13, 7]},
+			"faces": {
+				"north": {"uv": [4, 7, 5.25, 7.25], "texture": "#2"},
+				"east": {"uv": [5.5, 7, 6.75, 7.25], "texture": "#2"},
+				"south": {"uv": [7, 7, 8.25, 7.25], "texture": "#2"},
+				"west": {"uv": [7.5, 1.5, 8.75, 1.75], "texture": "#2"},
+				"up": {"uv": [6.25, 6.25, 5, 5], "texture": "#2"},
+				"down": {"uv": [7.75, 0, 6.5, 1.25], "texture": "#2"}
+			}
+		},
+		{
+			"from": [7, 16, 7],
+			"to": [9, 18, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 16, 7]},
+			"faces": {
+				"north": {"uv": [6.5, 1.5, 7.5, 2.5], "texture": "#2"},
+				"east": {"uv": [4, 0, 6.5, 1], "texture": "#2"},
+				"south": {"uv": [6.5, 2.5, 7.5, 3.5], "texture": "#2"},
+				"west": {"uv": [4, 1, 6.5, 2], "texture": "#2"},
+				"up": {"uv": [5, 4.5, 4, 2], "texture": "#2"},
+				"down": {"uv": [5, 4.5, 4, 7], "texture": "#2"}
+			}
+		},
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 8], "texture": "#2"},
+				"east": {"uv": [1, 0, 2, 8], "texture": "#2"},
+				"south": {"uv": [2, 0, 3, 8], "texture": "#2"},
+				"west": {"uv": [3, 0, 4, 8], "texture": "#2"},
+				"up": {"uv": [7.5, 4.5, 6.5, 3.5], "texture": "#2"},
+				"down": {"uv": [7.5, 4.5, 6.5, 5.5], "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -180, 0],
+			"translation": [-0.5, 3, 0]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -180, 0],
+			"translation": [-0.5, 3, 0]
+		},
+		"firstperson_righthand": {
+			"rotation": [-5, 180, 0],
+			"translation": [0.75, 4.5, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-5, -180, 0],
+			"translation": [0.75, 4.5, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"ground": {
+			"rotation": [0, 0, 90]
+		},
+		"gui": {
+			"rotation": [-50, 7, 38],
+			"translation": [0.5, -1.75, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "rustypipe",
+			"origin": [7, 16, 7],
+			"color": 0,
+			"children": [
+				0,
+				1,
+				{
+					"name": "Main pipe",
+					"origin": [7, 16, 7],
+					"color": 0,
+					"children": [2, 3]
+				}
+			]
+		}
+	]
+}

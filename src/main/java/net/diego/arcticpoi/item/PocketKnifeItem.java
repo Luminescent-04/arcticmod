@@ -26,7 +26,7 @@ public class PocketKnifeItem extends DiggerItem {
 
     public PocketKnifeItem() {
         super(
-                2.5f,                   // Attack damage
+                3.5f,                   // Attack damage
                 5.5f,                  // Attack speed (negative = faster)
                 ModTiers.IMPROVISED,    // Custom tier
                 BlockTags.MINEABLE_WITH_HOE, // What blocks it can break
@@ -79,7 +79,7 @@ public class PocketKnifeItem extends DiggerItem {
         super.appendHoverText(stack, world, tooltip, flag);
 
         // Add gray italic tooltip
-        tooltip.add(Component.literal("Could riddle something with cuts in seconds.")
+        tooltip.add(Component.literal("Could riddle something with cuts in seconds")
                 .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     }
 }

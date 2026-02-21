@@ -6,7 +6,7 @@
     "I"
   ],
   "key": {
-    "I": { "tag": "minecraft:stripped_log" }
+    "I": { "item": "minecraft:stripped_spruce_log"}
   },
   "result": {
     "item": "arcticpoi:shaft"

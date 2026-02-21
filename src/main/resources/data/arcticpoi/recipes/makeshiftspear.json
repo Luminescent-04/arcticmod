@@ -8,8 +8,8 @@
   ],
   "key": {
     "R": { "item": "arcticpoi:scrapknife"},
-    "I": { "item": "minecraft:string"},
-    "S": { "item": "minecraft:stick"}
+    "I": { "item": "arcticpoi:duct_tape"},
+    "S": { "item": "arcticpoi:shaft"}
   },
   "result": {
     "item": "arcticpoi:makeshiftspear"
