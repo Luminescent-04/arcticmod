@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "arcticpoi:block/chair" },
-    "facing=south": { "model": "arcticpoi:block/chair", "y": 180 },
-    "facing=west":  { "model": "arcticpoi:block/chair", "y": 270 },
-    "facing=east":  { "model": "arcticpoi:block/chair", "y": 90 }
-  }
-}

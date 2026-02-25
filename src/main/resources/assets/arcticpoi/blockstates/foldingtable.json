@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "arcticpoi:block/foldingtable" },
-    "facing=south": { "model": "arcticpoi:block/foldingtable", "y": 180 },
-    "facing=west":  { "model": "arcticpoi:block/foldingtable", "y": 270 },
-    "facing=east":  { "model": "arcticpoi:block/foldingtable", "y": 90 }
-  }
-}

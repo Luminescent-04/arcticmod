@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "arcticpoi:block/waterjug" },
-    "facing=south": { "model": "arcticpoi:block/waterjug", "y": 180 },
-    "facing=west":  { "model": "arcticpoi:block/waterjug", "y": 270 },
-    "facing=east":  { "model": "arcticpoi:block/waterjug", "y": 90 }
-  }
-}

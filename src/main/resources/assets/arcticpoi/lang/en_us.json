@@ -1,13 +1,4 @@
 {
-  "block.arcticpoi.brokenchair": "Broken Chair",
-  "block.arcticpoi.chair": "Wooden Chair",
-  "block.arcticpoi.crate": "Wooden Crate",
-  "block.arcticpoi.foldingtable": "Folding Table",
-  "block.arcticpoi.logseat": "Log Seat",
-  "block.arcticpoi.radio": "Radio",
-  "block.arcticpoi.shelf": "Wooden Shelf",
-  "block.arcticpoi.waterjug": "Water Jug",
-  "block.arcticpoi.woodstack": "Stack of Firewood",
   "item.arcticpoi.plank": "2x4",
   "item.arcticpoi.pocketknife": "Pocket Knife",
   "itemGroup.arctic_essentials": "Arctic Essentials",
@@ -16,9 +7,10 @@
   "item.arcticpoi.duct_tape": "Roll of Duct Tape",
   "item.arcticpoi.shaft": "Wood Shaft",
   "item.arcticpoi.scrapknife": "Scrap Knife",
-  "item.arcticpoi.makeshiftspear": "Scrap Spear",
+  "item.arcticpoi.makeshiftspear": "Makeshift Spear",
   "item.arcticpoi.rustypipe": "Rusty Pipe",
-  "item.arcticpoi.serratedblade": "Sharpened Mod",
+  "item.arcticpoi.serratedblade": "Serrated Mod",
   "item.arcticpoi.clubhammer": "Club Hammer",
-  "item.arcticpoi.scrapknife_s": "Sharpened Scrap Knife"
+  "item.arcticpoi.pipe": "Rusty Pipe",
+  "item.arcticpoi.woodmallet": "Wooden Mallet"
 }

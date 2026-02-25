@@ -10,17 +10,18 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+@SuppressWarnings("unused") // ARCTICPOI_TAB is registered via Forge
 public class CreativeTab {
 
     // Deferred register for the creative tab
     public static final DeferredRegister<CreativeModeTab> TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ArcticPoi.MOD_ID);
 
-    // The actual creative tab
+    // The actual creative tab - kept public for Forge registration
     public static final RegistryObject<CreativeModeTab> ARCTICPOI_TAB = TABS.register("arctic_essentials",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.arctic_essentials")) // translation key in en_us.json
-                    .icon(() -> new ItemStack(ModBlocks.CRATE.get()))        // tab icon
+                    .icon(() -> new ItemStack(ModItems.PLANK.get()))        // tab icon
                     .displayItems((params, output) -> {
                         // Add all blocks automatically
                         ModBlocks.BLOCKS.getEntries().forEach(block -> output.accept(block.get().asItem()));

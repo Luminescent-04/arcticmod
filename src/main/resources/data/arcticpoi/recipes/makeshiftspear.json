@@ -1,17 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "pattern": [
-    " R",
-    " I",
-    " S"
+    "  I",
+    " S ",
+    "S  "
   ],
   "key": {
-    "R": { "item": "arcticpoi:scrapknife"},
-    "I": { "item": "arcticpoi:duct_tape"},
-    "S": { "item": "arcticpoi:shaft"}
+    "I": { "item": "minecraft:bone" },
+    "S": { "item": "minecraft:stick" }
   },
-  "result": {
-    "item": "arcticpoi:makeshiftspear"
-  }
+  "result": { "item": "arcticpoi:makeshiftspear" }
 }
+

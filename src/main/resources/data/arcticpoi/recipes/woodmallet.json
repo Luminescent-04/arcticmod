@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "WWW",
+    " W ",
     " S ",
     " S "
   ],
@@ -9,6 +9,6 @@
     "W": { "item": "minecraft:oak_planks" },
     "S": { "item": "minecraft:stick" }
   },
-  "result": { "item": "arcticpoi:mallet" }
+  "result": { "item": "arcticpoi:woodmallet" }
 }
 

@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "WWW",
+    "  I",
     " S ",
-    " S "
+    "S  "
   ],
   "key": {
-    "W": { "item": "minecraft:oak_planks" },
+    "I": { "item": "minecraft:flint" },
     "S": { "item": "minecraft:stick" }
   },
-  "result": { "item": "arcticpoi:mallet" }
+  "result": { "item": "arcticpoi:fishingspear" }
 }
 

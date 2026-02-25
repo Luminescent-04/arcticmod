@@ -2,13 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "I",
-    "I"
+    " II",
+    " I ",
+    " I "
   ],
   "key": {
-    "I": { "item": "minecraft:stripped_spruce_log"}
+    "I": { "tag": "minecraft:iron_ingot" }
   },
   "result": {
-    "item": "arcticpoi:shaft"
+    "item": "arcticpoi:pipe"
   }
 }
