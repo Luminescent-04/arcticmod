@@ -1,9 +1,8 @@
 {
   "item.arcticpoi.plank": "2x4",
-  "item.arcticpoi.pocketknife": "Pocket Knife",
+  "item.arcticpoi.pocketknife": "Boxcutter",
   "itemGroup.arctic_essentials": "Arctic Essentials",
   "item.arcticpoi.mallet": "Wooden Mallet",
-  "item.arcticpoi.fishingspear": "Fishing Spear",
   "item.arcticpoi.duct_tape": "Roll of Duct Tape",
   "item.arcticpoi.shaft": "Wood Shaft",
   "item.arcticpoi.scrapknife": "Scrap Knife",
@@ -12,5 +11,12 @@
   "item.arcticpoi.serratedblade": "Serrated Mod",
   "item.arcticpoi.clubhammer": "Club Hammer",
   "item.arcticpoi.pipe": "Rusty Pipe",
-  "item.arcticpoi.woodmallet": "Wooden Mallet"
+  "item.arcticpoi.woodmallet": "Wooden Mallet",
+  "item.arcticpoi.shiv": "Shiv",
+  "item.arcticpoi.troutknife": "Trout Knife",
+  "item.arcticpoi.boxcutterspear": "Box Cutter Spear",
+  "item.arcticpoi.hatchet": "Hatchet",
+  "item.arcticpoi.hammer": "Hammer",
+  "item.arcticpoi.shivspear": "Shiv Spear",
+  "item.arcticpoi.post": "Sign Pole"
 }

@@ -21,7 +21,7 @@ public class CreativeTab {
     public static final RegistryObject<CreativeModeTab> ARCTICPOI_TAB = TABS.register("arctic_essentials",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.arctic_essentials")) // translation key in en_us.json
-                    .icon(() -> new ItemStack(ModItems.PLANK.get()))        // tab icon
+                    .icon(() -> new ItemStack(ModItems.HAMMER.get()))        // tab icon
                     .displayItems((params, output) -> {
                         // Add all blocks automatically
                         ModBlocks.BLOCKS.getEntries().forEach(block -> output.accept(block.get().asItem()));

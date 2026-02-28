@@ -12,101 +12,193 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, ArcticPoi.MOD_ID);
 
     // -------------------------------
-    // Simple Weapons
+    // CUTTERS (Fast, bleed, fragile)
     // -------------------------------
 
-    public static final RegistryObject<Item> PLANK =
-            ITEMS.register("plank", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            2.0f,   // damage
-                            -3.4f,  // speed
-                            0.3f,    // knockback
-                            50,     // durability
-                            0.0f    // reach
-                    )
-            );
-
-    public static final RegistryObject<Item> PIPE =
-            ITEMS.register("pipe", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            2.5f, //damage
-                            -3.8f, //atk speed
-                            0.6f, //knockback
-                            150, //durability
-                            0.0f // reach
-                    )
-            );
-
     public static final RegistryObject<Item> POCKETKNIFE =
-            ITEMS.register("pocketknife", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            1.5f,   // damage
-                            -2.0f,  // speed
-                            0.1f,   // knockback
-                            40,      // durability
-                            -1.0f    // reach (shorter)
-                    )
-            );
+            ITEMS.register("pocketknife", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    5.5f,
+                    4.0f,
+                    SimpleMeleeWeaponItem.KnockbackTier.WEAK,
+                    80,
+                    SimpleMeleeWeaponItem.RangeType.CLOSE,
+                    false,
+                    0.15f,
+                    1.5f,
+                    0.05f,   // armorPierce
+                    false // no execution
+            ));
 
-    public static final RegistryObject<Item> SCRAPKNIFE =
-            ITEMS.register("scrapknife", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            2.2f,   // damage
-                            -2.4f,  // speed
-                            0.2f,   // knockback
-                            60,      // durability
-                            -0.75f   // reach (shorter)
-                    )
-            );
+    public static final RegistryObject<Item> SHIV =
+            ITEMS.register("shiv", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    6.5f,
+                    4.0f,
+                    SimpleMeleeWeaponItem.KnockbackTier.WEAK,
+                    25,
+                    SimpleMeleeWeaponItem.RangeType.CLOSE,
+                    false,
+                    0.2f,
+                    4.0f,
+                    0.1f,    // armorPierce
+                    false
+            ));
 
-    public static final RegistryObject<Item> FISHINGSPEAR =
-            ITEMS.register("fishingspear", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            2.0f,   // damage
-                            -2.8f,  // speed
-                            0.0f,   // knockback
-                            55,      // durability
-                            1.0f     // reach (longer)
-                    )
-            );
+    public static final RegistryObject<Item> TROUTKNIFE =
+            ITEMS.register("troutknife", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    4.5f,
+                    4.0f,
+                    SimpleMeleeWeaponItem.KnockbackTier.WEAK,
+                    100,
+                    SimpleMeleeWeaponItem.RangeType.CLOSE,
+                    false,
+                    0.1f,
+                    1.25f,
+                    0.05f,
+                    false
+            ));
 
-    public static final RegistryObject<Item> MAKESHIFTSPEAR =
-            ITEMS.register("makeshiftspear", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            2.5f,   // damage
-                            -3.0f,  // speed
-                            0.0f,   // knockback
-                            65,      // durability
-                            1.25f    // reach (longer)
-                    )
-            );
+    // -------------------------------
+    // HACKERS (Balanced)
+    // -------------------------------
 
     public static final RegistryObject<Item> MALLET =
             ITEMS.register("mallet", () ->
-                    new SimpleMeleeWeaponItem(
-                            new Item.Properties(),
-                            4.0f,   // damage
-                            -3.5f,  // speed
-                            1.0f,   // knockback
-                            100,     // durability
-                            0.0f     // reach
-                    )
-            );
+                    new SimpleMeleeWeaponItem(new Item.Properties(),
+                            5.0f,
+                            -2.0f,
+                            SimpleMeleeWeaponItem.KnockbackTier.NORMAL,
+                            170,
+                            SimpleMeleeWeaponItem.RangeType.SHORT,
+                            false,
+                            0.0f,
+                            0.0f,
+                            0.1f,  // armorPierce
+                            false
+                    ));
+
+    public static final RegistryObject<Item> HATCHET =
+            ITEMS.register("hatchet", () ->
+                    new SimpleMeleeWeaponItem(new Item.Properties(),
+                            6.5f,
+                            -2.5f,
+                            SimpleMeleeWeaponItem.KnockbackTier.NORMAL,
+                            130,
+                            SimpleMeleeWeaponItem.RangeType.MEDIUM,
+                            false,
+                            0.1f,
+                            0.0f,
+                            0.15f,
+                            false
+                    ));
+
+    public static final RegistryObject<Item> HAMMER =
+            ITEMS.register("hammer", () ->
+                    new SimpleMeleeWeaponItem(new Item.Properties(),
+                            6.0f,
+                            -2.5f,
+                            SimpleMeleeWeaponItem.KnockbackTier.NORMAL,
+                            200,
+                            SimpleMeleeWeaponItem.RangeType.SHORT,
+                            false,
+                            0.0f,
+                            0.0f,
+                            0.2f,
+                            false
+                    ));
 
     // -------------------------------
-    // Ingredients for upgrades
-    // (Register these when they are used in crafting recipes)
-    // public static final RegistryObject<Item> DUCT_TAPE =
-    //         ITEMS.register("duct_tape", () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> SHAFT =
-    //         ITEMS.register("shaft", () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> SERRATED_BLADE =
-    //         ITEMS.register("serrated_blade", () -> new Item(new Item.Properties()));
+    // BREAKERS (Crowd control snowball)
+    // -------------------------------
 
+    public static final RegistryObject<Item> PLANK =
+            ITEMS.register("plank", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    4.5f,
+                    -3.2f,
+                    SimpleMeleeWeaponItem.KnockbackTier.STRONG,
+                    50,
+                    SimpleMeleeWeaponItem.RangeType.MEDIUM,
+                    true,
+                    0.0f,
+                    0.0f,
+                    0.0f,
+                    true
+            ));
+
+    public static final RegistryObject<Item> PIPE =
+            ITEMS.register("pipe", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    2.5f,
+                    -3.8f,
+                    SimpleMeleeWeaponItem.KnockbackTier.STRONG,
+                    250,
+                    SimpleMeleeWeaponItem.RangeType.MEDIUM,
+                    true,
+                    0.0f,
+                    0.0f,
+                    0.2f,
+                    true
+            ));
+
+    // -------------------------------
+    // SPEARS (Reach, precision, low durability)
+    // -------------------------------
+
+    public static final RegistryObject<Item> BOXCUTTERSPEAR =
+            ITEMS.register("boxcutterspear", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    4.5f,
+                    -1.0f,
+                    SimpleMeleeWeaponItem.KnockbackTier.NONE,
+                    60,
+                    SimpleMeleeWeaponItem.RangeType.LONG,
+                    false,
+                    0.0f,
+                    0.0f,
+                    0.1f,
+                    false
+            ));
+
+    public static final RegistryObject<Item> SHIVSPEAR =
+            ITEMS.register("shivspear", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    10.5f,
+                    -1.0f,
+                    SimpleMeleeWeaponItem.KnockbackTier.NONE,
+                    20,
+                    SimpleMeleeWeaponItem.RangeType.LONG,
+                    false,
+                    0.0f,
+                    0.0f,
+                    0.25f,
+                    false
+            ));
+
+    public static final RegistryObject<Item> POST =
+            ITEMS.register("post", () -> new SimpleMeleeWeaponItem(
+                    new Item.Properties(),
+                    2.0f,
+                    -2.0f,
+                    SimpleMeleeWeaponItem.KnockbackTier.NONE,
+                    120,
+                    SimpleMeleeWeaponItem.RangeType.LONG,
+                    false,
+                    0.0f,
+                    0.0f,
+                    0.05f,
+                    false
+            ));
+
+    // -------------------------------
+    // INGREDIENTS
+    // -------------------------------
+
+    public static final RegistryObject<Item> DUCT_TAPE =
+            ITEMS.register("duct_tape", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SHAFT =
+            ITEMS.register("shaft", () -> new Item(new Item.Properties()));
 }
