@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " SI",
+    " S "
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "S": { "item": "arcticpoi:shaft" }
+  },
+  "result": {
+    "item": "arcticpoi:hatchet"
+  }
+}

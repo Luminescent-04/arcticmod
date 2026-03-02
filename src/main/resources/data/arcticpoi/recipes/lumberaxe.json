@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "S": { "item": "arcticpoi:shaft" }
+  },
+  "result": {
+    "item": "arcticpoi:lumberaxe"
+  }
+}

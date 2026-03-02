@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    " L "
+  ],
+  "key": {
+    "L": { "tag": "minecraft:logs" }
+  },
+  "result": {
+    "item": "arcticpoi:shaft",
+    "count": 2
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    " SD",
+    " S "
+  ],
+  "key": {
+    "I": { "item": "arcticpoi:shiv" },
+    "S": { "item": "arcticpoi:shaft" },
+    "D": { "item": "arcticpoi:duct_tape" }
+  },
+  "result": {
+    "item": "arcticpoi:shivspear"
+  }
+}

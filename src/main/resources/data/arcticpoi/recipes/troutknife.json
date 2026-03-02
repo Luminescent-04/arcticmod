@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I",
+    " S"
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_nugget" },
+    "S": { "item": "arcticpoi:shaft" }
+  },
+  "result": {
+    "item": "arcticpoi:troutknife"
+  }
+}

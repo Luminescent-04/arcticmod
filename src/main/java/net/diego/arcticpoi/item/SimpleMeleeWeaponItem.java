@@ -44,7 +44,6 @@ public class SimpleMeleeWeaponItem extends Item {
     private final float bleedChance;
     private final float backstabMultiplier;
     private final float armorPierce;              // % armor ignored (0.0f - 1.0f)
-    private final boolean canExecute; // <-- new field
 
     private static final Random RANDOM = new Random();
 
@@ -86,8 +85,7 @@ public class SimpleMeleeWeaponItem extends Item {
             boolean hasSweeping,
             float bleedChance,
             float backstabMultiplier,
-            float armorPierce,
-            boolean canExecute      // <-- new parameter
+            float armorPierce
     ) {
         super(properties.durability(durability));
         this.damage = damage;
@@ -98,7 +96,6 @@ public class SimpleMeleeWeaponItem extends Item {
         this.bleedChance = bleedChance;
         this.backstabMultiplier = backstabMultiplier;
         this.armorPierce = armorPierce;
-        this.canExecute = canExecute;
     }
 
     @Override
@@ -132,41 +129,6 @@ public class SimpleMeleeWeaponItem extends Item {
                         attacker.damageSources().generic(),
                         bonusDamage
                 );
-            }
-            // EXECUTION ON KILL (STRENGTH STACKING + SLOWNESS FATIGUE)
-            if (canExecute && attacker instanceof Player player && !target.isAlive()) {
-
-                final int STACK_DURATION = 200;   // +10 seconds per kill
-                final int SLOW_STACK = 100;       // +5 seconds per kill
-                final int MAX_DURATION = 2400;    // 2 minutes cap
-
-                // -------- Strength (stacks with cap) --------
-                MobEffectInstance currentStrength = player.getEffect(MobEffects.DAMAGE_BOOST);
-                int newStrengthDuration = STACK_DURATION;
-
-                if (currentStrength != null) {
-                    newStrengthDuration = Math.min(currentStrength.getDuration() + STACK_DURATION, MAX_DURATION);
-                }
-
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.DAMAGE_BOOST,
-                        newStrengthDuration,
-                        0
-                ));
-
-                // -------- Slowness (fatigue, does not stack infinitely) --------
-                MobEffectInstance currentSlow = player.getEffect(MobEffects.MOVEMENT_SLOWDOWN);
-                int newSlowDuration = SLOW_STACK;
-
-                if (currentSlow != null) {
-                    newSlowDuration = Math.min(currentSlow.getDuration() + SLOW_STACK, MAX_DURATION);
-                }
-
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.MOVEMENT_SLOWDOWN,
-                        newSlowDuration,
-                        0
-                ));
             }
             //KNOCKBACK
             if (knockbackTier != KnockbackTier.NONE) {
@@ -270,11 +232,7 @@ public class SimpleMeleeWeaponItem extends Item {
         }
         if (armorPierce > 0f) {
             tooltip.add(Component.literal("Armor Pierce: " + (int)(armorPierce * 100) + "%")
-                    .withStyle(ChatFormatting.DARK_RED));
-        }
-        if (canExecute) {
-            tooltip.add(Component.literal("Strained Swinging")
-                    .withStyle(ChatFormatting.DARK_RED, ChatFormatting.BOLD));
+                    .withStyle(ChatFormatting.WHITE));
         }
 
         super.appendHoverText(stack, level, tooltip, flag);

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+   " G ",
+   " T "
+  ],
+  "key": {
+    "G": { "item": "minecraft:glass" },
+    "T": { "item": "arcticpoi:duct_tape" }
+  },
+  "result": {
+    "item": "arcticpoi:shiv"
+  }
+}
