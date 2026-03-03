@@ -196,11 +196,9 @@ public class ModItems {
                     0.0f,
                     0.0f
             ));
-
     // INGREDIENTS
     public static final RegistryObject<Item> DUCT_TAPE =
             ITEMS.register("duct_tape", () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> SHAFT =
             ITEMS.register("shaft", () -> new Item(new Item.Properties()));
 }

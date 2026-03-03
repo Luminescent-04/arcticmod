@@ -232,7 +232,7 @@ public class SimpleMeleeWeaponItem extends Item {
         }
         if (armorPierce > 0f) {
             tooltip.add(Component.literal("Armor Pierce: " + (int)(armorPierce * 100) + "%")
-                    .withStyle(ChatFormatting.WHITE));
+                    .withStyle(ChatFormatting.DARK_RED));
         }
 
         super.appendHoverText(stack, level, tooltip, flag);

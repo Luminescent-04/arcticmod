@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
     modId="arcticpoi"
-    version="1.0.0"
+    version="0.1.2"
     displayName="Arctic Poi"
     authors="Lumine04, BugJuice"
     description='''Adds decorations and structures'''
