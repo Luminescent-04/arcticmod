@@ -68,7 +68,7 @@ public class ModArmorMaterials {
     }
 
     // MASK_ARMOR (Light armor like leather)
-    // Padded jacket, pants, boots, and hood
+    // Gas mask with low durability but good enchantability and repairable with duct tape
     public static final ArmorMaterial MASK = createArmorMaterial(
             "mask",
             5, // Leather-level durability (5x multiplier)
