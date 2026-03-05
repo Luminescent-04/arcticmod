@@ -22,5 +22,19 @@
   "item.arcticpoi.sledgehammer": "Sledgehammer",
   "item.arcticpoi.lumberaxe": "Lumber Axe",
   "item.arcticpoi.machete": "Machete",
-  "item.arcticpoi.prybar": "Pry Bar"
+  "item.arcticpoi.prybar": "Pry Bar",
+  "item.arcticpoi.arctic_helmet": "Arctic Helmet",
+  "item.arcticpoi.arctic_chestplate": "Arctic Chestplate",
+  "item.arcticpoi.arctic_leggings": "Arctic Leggings",
+  "item.arcticpoi.arctic_boots": "Arctic Boots",
+  "item.arcticpoi.copper_helmet": "Copper Helmet",
+  "item.arcticpoi.copper_chestplate": "Copper Chestplate",
+  "item.arcticpoi.copper_leggings": "Copper Leggings",
+  "item.arcticpoi.copper_boots": "Copper Boots",
+  "item.arcticpoi.padded_hood": "Padded Hood",
+  "item.arcticpoi.padded_jacket": "Padded Jacket",
+  "item.arcticpoi.padded_pants": "Padded Pants",
+  "item.arcticpoi.padded_boots": "Padded Boots",
+  "item.arcticpoi.respirator": "Respirator"
+
 }

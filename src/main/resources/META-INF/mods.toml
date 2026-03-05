@@ -23,3 +23,13 @@ license="All Rights Reserved"
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.arcticpoi]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.4,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

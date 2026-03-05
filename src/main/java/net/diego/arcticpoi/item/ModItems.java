@@ -1,6 +1,8 @@
 package net.diego.arcticpoi.item;
 
 import net.diego.arcticpoi.ArcticPoi;
+import net.diego.arcticpoi.item.armor.RespiratorsItem;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -201,4 +203,10 @@ public class ModItems {
             ITEMS.register("duct_tape", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SHAFT =
             ITEMS.register("shaft", () -> new Item(new Item.Properties()));
+
+    // ARMOR - PADDED SET
+    public static final RegistryObject<Item> RESPIRATOR = ITEMS.register("respirator",
+            () -> new RespiratorsItem(ModArmorMaterials.MASK, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "respirator"));
+
 }
