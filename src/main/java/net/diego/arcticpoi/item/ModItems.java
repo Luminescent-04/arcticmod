@@ -1,7 +1,7 @@
 package net.diego.arcticpoi.item;
 
 import net.diego.arcticpoi.ArcticPoi;
-import net.diego.arcticpoi.item.armor.RespiratorsItem;
+import net.diego.arcticpoi.item.armor.ProtectiveMaskItem;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -204,9 +204,37 @@ public class ModItems {
     public static final RegistryObject<Item> SHAFT =
             ITEMS.register("shaft", () -> new Item(new Item.Properties()));
 
-    // ARMOR - PADDED SET
+    // ARMOR - PROTECTIVE MASKS
+    // All masks are helmet-only items with varying protection levels
+
+    // SURGICAL MASK - Basic disposable mask (cosmetic/RP value)
+    public static final RegistryObject<Item> SURGICAL_MASK = ITEMS.register("surgical_mask",
+            () -> new ProtectiveMaskItem(ModArmorMaterials.SURGICAL_MASK, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "surgical_mask", ProtectiveMaskItem.ProtectionLevel.NONE));
+
+    // RESPIRATOR (N95/FFP2) - Reduces poison duration
     public static final RegistryObject<Item> RESPIRATOR = ITEMS.register("respirator",
-            () -> new RespiratorsItem(ModArmorMaterials.MASK, ArmorItem.Type.HELMET,
-                    new Item.Properties(), "respirator"));
+            () -> new ProtectiveMaskItem(ModArmorMaterials.RESPIRATOR, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "halfmask", ProtectiveMaskItem.ProtectionLevel.MINIMAL));
+
+    // HALF-FACE MASK - Blocks poison, reduces other airborne effects
+    public static final RegistryObject<Item> HALFMASK = ITEMS.register("halfmask",
+            () -> new ProtectiveMaskItem(ModArmorMaterials.HALFMASK, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "halfmask", ProtectiveMaskItem.ProtectionLevel.MODERATE));
+
+    // FULL-FACE MASK - Blocks poison, blindness, nausea (protects eyes)
+    public static final RegistryObject<Item> FULLMASK = ITEMS.register("fullmask",
+            () -> new ProtectiveMaskItem(ModArmorMaterials.FULLMASK, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "fullmask", ProtectiveMaskItem.ProtectionLevel.HIGH));
+
+    // GASMASK - Military-grade: Complete poison & wither immunity
+    public static final RegistryObject<Item> GASMASK = ITEMS.register("gasmask",
+            () -> new ProtectiveMaskItem(ModArmorMaterials.GASMASK, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "gasmask", ProtectiveMaskItem.ProtectionLevel.COMPLETE));
+
+    // PAPR SYSTEM - Powered respirator: Complete protection + regeneration
+    public static final RegistryObject<Item> PAPR_SYSTEM = ITEMS.register("papr_system",
+            () -> new ProtectiveMaskItem(ModArmorMaterials.PAPR_SYSTEM, ArmorItem.Type.HELMET,
+                    new Item.Properties(), "papr_system", ProtectiveMaskItem.ProtectionLevel.POWERED));
 
 }

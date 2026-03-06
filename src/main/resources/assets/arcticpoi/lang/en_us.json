@@ -35,6 +35,11 @@
   "item.arcticpoi.padded_jacket": "Padded Jacket",
   "item.arcticpoi.padded_pants": "Padded Pants",
   "item.arcticpoi.padded_boots": "Padded Boots",
-  "item.arcticpoi.respirator": "Respirator"
+  "item.arcticpoi.surgical_mask": "Surgical Mask",
+  "item.arcticpoi.respirator": "N95 Respirator",
+  "item.arcticpoi.halfmask": "Half-Face Respirator",
+  "item.arcticpoi.fullmask": "Full-Face Respirator",
+  "item.arcticpoi.gasmask": "Military Gas Mask",
+  "item.arcticpoi.papr_system": "PAPR System"
 
 }
