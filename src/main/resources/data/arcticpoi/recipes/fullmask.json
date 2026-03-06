@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LGL",
+    "LCL",
+    " T "
+  ],
+  "key": {
+    "L": { "item": "minecraft:leather" },
+    "G": { "tag": "forge:glass_panes" },
+    "C": { "tag": "minecraft:coals" },
+    "T": { "item": "arcticpoi:duct_tape" }
+  },
+  "result": {
+    "item": "arcticpoi:fullmask"
+  }
+}
+

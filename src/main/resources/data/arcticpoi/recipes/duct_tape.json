@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "SSS",
+    "PPP"
+  ],
+  "key": {
+    "P": { "item": "minecraft:paper" },
+    "S": { "item": "minecraft:slime_ball" }
+  },
+  "result": {
+    "item": "arcticpoi:duct_tape",
+    "count": 4
+  }
+}
+

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RDR",
+    "GCG",
+    " P "
+  ],
+  "key": {
+    "R": { "item": "minecraft:redstone" },
+    "D": { "item": "minecraft:redstone_block" },
+    "G": { "item": "minecraft:gold_ingot" },
+    "C": { "item": "minecraft:coal_block" },
+    "P": { "item": "arcticpoi:gasmask" }
+  },
+  "result": {
+    "item": "arcticpoi:papr_system"
+  }
+}
+

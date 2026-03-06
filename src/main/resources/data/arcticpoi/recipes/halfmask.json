@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "LCL",
+    " T "
+  ],
+  "key": {
+    "L": { "item": "minecraft:leather" },
+    "C": { "tag": "minecraft:coals" },
+    "T": { "item": "arcticpoi:duct_tape" }
+  },
+  "result": {
+    "item": "arcticpoi:halfmask"
+  }
+}
+
